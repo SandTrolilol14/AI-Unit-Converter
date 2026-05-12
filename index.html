@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Assisted Unit Converter</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        .container { border: 1px solid #ccc; padding: 20px; width: 300px; margin: auto; border-radius: 8px; }
+        input, select, button { margin: 10px 0; padding: 10px; width: 90%; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Unit Converter</h2>
+    <input type="number" id="inputValue" placeholder="Enter value" />
+
+    <select id="conversionType">
+        <option value="kmToMiles">Kilometers to Miles</option>
+        <option value="celsiusToFahrenheit">Celsius to Fahrenheit</option>
+    </select>
+
+    <button onclick="convert()">Convert</button>
+
+    <h3 id="result"></h3>
+</div>
+
+<script>
+    // Main function generated with AI assistance
+    function convert() {
+        let val = document.getElementById("inputValue").value;
+        let type = document.getElementById("conversionType").value;
+        let result = 0;
+
+        if (val === "") {
+            document.getElementById("result").innerText = "Please enter a value.";
+            return;
+        }
+
+        // Logic for conversions
+        if (type === "kmToMiles") {
+            result = val * 0.621371;
+            document.getElementById("result").innerText = `${val} km = ${result.toFixed(2)} miles`;
+        } else if (type === "celsiusToFahrenheit") {
+            result = (val * 9/5) + 32;
+            document.getElementById("result").innerText = `${val} °C = ${result.toFixed(2)} °F`;
+        }
+    }
+</script>
+</body>
+</html>
