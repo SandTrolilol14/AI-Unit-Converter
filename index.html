@@ -18,6 +18,7 @@
     <select id="conversionType">
         <option value="kmToMiles">Kilometers to Miles</option>
         <option value="celsiusToFahrenheit">Celsius to Fahrenheit</option>
+        <option value="kgToLbs">Kilograms to Pounds</option>
     </select>
 
     <button onclick="convert()">Convert</button>
@@ -44,6 +45,9 @@
         } else if (type === "celsiusToFahrenheit") {
             result = (val * 9/5) + 32;
             document.getElementById("result").innerText = `${val} °C = ${result.toFixed(2)} °F`;
+        }  else if (type === "kgToLbs") {
+        result = val * 2.20462;
+        document.getElementById("result").innerText = `${val} kg = ${result.toFixed(2)} lbs`;
         }
     }
 </script>
